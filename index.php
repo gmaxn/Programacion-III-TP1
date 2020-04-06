@@ -15,6 +15,10 @@ $settings($container);
 $logger = require __DIR__ . './app/logger.php';
 $logger($container);
 
+// Resolve service
+$service = require __DIR__ . './app/service.php';
+$service($container);
+
 // Set container to create App with on AppFactory
 AppFactory::setContainer($container);
 
