@@ -1,0 +1,14 @@
+{
+    "name": "maxin/tp1",
+    "authors": [
+        {
+            "name": "Maximiliano Nicolas Guelpa",
+            "email": "mguelpa@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.0",
+        "php-di/php-di": "^6.0"
+    }
+}
