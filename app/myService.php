@@ -36,7 +36,7 @@ class myService implements myServiceInterface {
         return $response;    
     }
 
-    public function GetCountriesByContinentName($request, $response, $args) {
+    public function GetCountriesByName($request, $response, $args) {
 
         if(isset($args['name']))
         {
@@ -48,7 +48,36 @@ class myService implements myServiceInterface {
     
             foreach($countries as $country)
             {
-                if($country['region'] == $countryName)
+                if($country['name'] == $countryName)
+                {
+                    $data[] = $country;
+                }
+            }
+
+            if($data != null) {
+    
+                $response->getBody()->write(json_encode($data));
+                return $response;
+            }
+        }
+
+        $response->getBody()->write("<p>country not found<p>");
+        return $response;
+    }
+
+    public function GetCountriesByContinentName($request, $response, $args) {
+
+        if(isset($args['name']))
+        {
+            $countries = $this->myServiceRepository->getAllCountries();
+
+            $regionName = str_replace('-', ' ', $args['name']);
+
+            $data = array();
+    
+            foreach($countries as $country)
+            {
+                if($country['region'] == $regionName)
                 {
                     $data[] = $country;
                 }
