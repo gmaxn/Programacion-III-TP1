@@ -1,6 +1,5 @@
 # Programacion-III-TP1
-A Simple API that returns countries information by different criteria.
-just copy one of the [Endpoints List](#endpoint-list) below and pass the search text at the end of it.
+A Simple API that filter countries and retrieve their information by different criteria. Just copy one of the [Endpoints List](#endpoint-list) and pass the search text at the end of it.
 ## Usage
 
 ```python

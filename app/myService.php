@@ -123,8 +123,6 @@ class myService implements myServiceInterface {
             $data = array();
 
             $subregionName = str_replace('-', ' ', $args['name']);
-
-            echo $subregionName;
     
             foreach($countries as $country)
             {
@@ -163,8 +161,6 @@ class myService implements myServiceInterface {
             $data = array();
 
             $capitalName = str_replace('-', ' ', $args['name']);
-
-            echo $capitalName;
     
             foreach($countries as $country)
             {
