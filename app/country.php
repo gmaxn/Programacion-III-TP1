@@ -1,16 +1,14 @@
 <?php
-
-class country {
+require __DIR__ . '/appendable.php';
+class country extends appendable {
 
     public $name;
     public $region;
     public $subregion;
     public $capital;
     public $languages;
-    public $data;
 
     public function __construct(){
         $this->languages = array();
-        $this->data = array();
     }
 }

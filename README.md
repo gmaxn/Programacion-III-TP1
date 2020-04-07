@@ -13,28 +13,14 @@ Response:
 [
     {
         "name": "Argentina",
-        "topLevelDomain": [
-            ".ar"
-        ],
-        "alpha2Code": "AR",
-        "alpha3Code": "ARG",
-        "callingCodes": [
-            "54"
-        ],
-        "capital": "Buenos Aires",
-        "altSpellings": [
-            "AR",
-            "Argentine Republic",
-            "República Argentina"
-        ],
         "region": "Americas",
         "subregion": "South America",
-        "population": 43590400,
-        "latlng": [
-            -34,
-            -64
+        "capital": "Buenos Aires",
+        "languages": [
+            "Spanish",
+            "Guaraní"
         ],
-        … [other data points]
+        "data": { ... [Extended Country data] }
     }
 ]
 ```

@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/myServiceInterface.php';
+require __DIR__ . '/country.php';
 use DI\Container;
 use \Psr\Http\Message\RequestInterface;
 use \Psr\Http\Message\ResponseInterface;
@@ -21,13 +22,15 @@ class myService implements myServiceInterface {
 
         foreach($countries as $country)
         {
-            $data[] = array(
+                $data[] = array(
                 "name" => $country['name'],
                 "region" => $country['region'],
                 "subregion" => $country['subregion'],
                 "capital" => $country['capital'],
                 "languages" => array_column($country['languages'], 'name'),
-            );
+            ); 
+
+            $data[] = $country;
         }
 
         $byGroup = $this->group_by("region", $data);
@@ -50,7 +53,15 @@ class myService implements myServiceInterface {
             {
                 if($country['name'] == $countryName)
                 {
-                    $data[] = $country;
+                    $aux = new country();
+                    $aux->name = $country['name'];
+                    $aux->region = $country['region'];
+                    $aux->subregion = $country['subregion'];
+                    $aux->capital = $country['capital'];
+                    $aux->languages = array_column($country['languages'], 'name');
+                    $aux->data = $country;
+
+                    $data[] = $aux;
                 }
             }
 
@@ -79,7 +90,15 @@ class myService implements myServiceInterface {
             {
                 if($country['region'] == $regionName)
                 {
-                    $data[] = $country;
+                    $aux = new country();
+                    $aux->name = $country['name'];
+                    $aux->region = $country['region'];
+                    $aux->subregion = $country['subregion'];
+                    $aux->capital = $country['capital'];
+                    $aux->languages = array_column($country['languages'], 'name');
+                    $aux->data = $country;
+
+                    $data[] = $aux;
                 }
             }
 
@@ -111,7 +130,15 @@ class myService implements myServiceInterface {
             {
                 if($country['subregion'] == $subregionName)
                 {
-                    $data[] = $country;
+                    $aux = new country();
+                    $aux->name = $country['name'];
+                    $aux->region = $country['region'];
+                    $aux->subregion = $country['subregion'];
+                    $aux->capital = $country['capital'];
+                    $aux->languages = array_column($country['languages'], 'name');
+                    $aux->data = $country;
+
+                    $data[] = $aux;
                 }
             }
 
@@ -143,7 +170,15 @@ class myService implements myServiceInterface {
             {
                 if($country['capital'] == $capitalName)
                 {
-                    $data[] = $country;
+                    $aux = new country();
+                    $aux->name = $country['name'];
+                    $aux->region = $country['region'];
+                    $aux->subregion = $country['subregion'];
+                    $aux->capital = $country['capital'];
+                    $aux->languages = array_column($country['languages'], 'name');
+                    $aux->data = $country;
+
+                    $data[] = $aux;
                 }
             }
 
@@ -179,7 +214,15 @@ class myService implements myServiceInterface {
                     {
                         if($language['name'] == $languageName)
                         {
-                            $data[] = $country;
+                            $aux = new country();
+                            $aux->name = $country['name'];
+                            $aux->region = $country['region'];
+                            $aux->subregion = $country['subregion'];
+                            $aux->capital = $country['capital'];
+                            $aux->languages = array_column($country['languages'], 'name');
+                            $aux->data = $country;
+        
+                            $data[] = $aux;
                         }
                     }
                 }
