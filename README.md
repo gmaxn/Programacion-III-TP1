@@ -45,14 +45,14 @@ Request Method: GET
 ```
 
 ## Extras
-* Searchs countries by name.
+* Search countries by name.
 ```python
 Request Url: localhost/TP1/countries/byName/Argentina
 Request Method: GET
 ```
 <br>
 
-* Groups countries by region.
+* Group countries by region.
 ```python
 Request Url: localhost/TP1/countries/byContinent
 Request Method: GET
